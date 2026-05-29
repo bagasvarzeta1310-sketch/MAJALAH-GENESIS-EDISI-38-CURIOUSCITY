@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Magazine Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="toolbar">
+            <div class="logo">E-MAJALAH<span>.VIEW</span></div>
+            <div class="upload-btn-wrapper">
+                <button class="btn-upload">Pilih File PDF</button>
+                <input type="file" id="pdf-upload" accept="application/pdf" />
+            </div>
+        </header>
+
+        <main class="viewer-container">
+            <div id="welcome-message" class="welcome-message">
+                <div class="upload-icon">📖</div>
+                <p>Silakan pilih atau unggah file PDF majalah Anda untuk mulai membaca.</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="pdf-canvas"></canvas>
+            </div>
+        </main>
+
+        <footer class="navigation-bar" id="navigation-bar" style="display: none;">
+            <button id="prev-page" class="nav-btn">← Sebelumnya</button>
+            <span class="page-counter">Halaman <span id="page-num">0</span> dari <span id="page-count">0</span></span>
+            <button id="next-page" class="nav-btn">Selanjutnya →</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
