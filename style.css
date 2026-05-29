@@ -1,0 +1,166 @@
+:root {
+    --bg-color: #0b0b0d;
+    --surface-color: #131316;
+    --accent-color: #ffffff;
+    --text-color: #f4f4f5;
+    --text-muted: #71717a;
+    --border-color: #27272a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header / Toolbar */
+.toolbar {
+    background-color: var(--surface-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+}
+
+.logo span {
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Custom Upload Button */
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-upload {
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-upload:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Main Viewer Content */
+.viewer-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: auto;
+    background: radial-gradient(circle at center, #16161a 0%, #0b0b0d 100%);
+}
+
+.welcome-message {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 300px;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.canvas-wrapper {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+#pdf-canvas {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+    max-height: 72vh;
+}
+
+/* Bottom Navigation Bar */
+.navigation-bar {
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-color: var(--text-muted);
+}
+
+.nav-btn:disabled {
+    color: #3f3f46;
+    border-color: #18181b;
+    cursor: not-allowed;
+}
+
+.page-counter {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+#page-num {
+    color: var(--text-color);
+    font-weight: 600;
+}
